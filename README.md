@@ -1,10 +1,10 @@
 ## Some Installs
 
-- [Docker Images : Maintain for AWS & GCP](https://hub.docker.com/u/prodrelworks)
 - [https://docs.docker.com/develop/develop-images/multistage-build/](https://docs.docker.com/develop/develop-images/multistage-build/)
 - [https://gist.github.com/azmarifdev/9c16c5a33e93aee05b35147fe7da1015](https://gist.github.com/azmarifdev/9c16c5a33e93aee05b35147fe7da1015)
 - [https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df](https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df)
 - [https://ohmyz.sh/#install](https://ohmyz.sh/#install)
+- [https://www.lazyvim.org/](https://www.lazyvim.org/)
 - [https://ohmyposh.dev/docs/installation/linux](https://ohmyposh.dev/docs/installation/linux)
 - [https://catalins.tech/zsh-plugins/](https://catalins.tech/zsh-plugins/)
 - [https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425?permalink_comment_id=3945021](https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425?permalink_comment_id=3945021)
@@ -186,6 +186,7 @@ sudo apt-get install -y nodejs
 - [https://docs.docker.com/desktop/setup/install/linux/](https://docs.docker.com/desktop/setup/install/linux/)
 - [https://www.docker.com/](https://www.docker.com/)
 - [https://docs.docker.com/build/](https://docs.docker.com/build/)
+- [Docker Images : Maintain for AWS & GCP](https://hub.docker.com/u/prodrelworks)
 
 ```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
