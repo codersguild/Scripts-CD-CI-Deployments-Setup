@@ -136,7 +136,19 @@ http://localhost:8082/v2/check?language=en-US&text=my+text
 - [https://www.tug.org/texlive/]
 - [https://inkscape.org/](https://inkscape.org/)
 - [https://textext.github.io/textext/](https://textext.github.io/textext/)
-- 
+
+## Java
+
+- [https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-22-04](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-22-04)
+
+```bash
+sudo apt install default-jdk
+sudo apt install openjdk-21-jdk
+```
+
+## LLVM
+
+- [https://llvm.org/docs/CMake.html](https://llvm.org/docs/CMake.html)
 
 ## Initial Install :
 
