@@ -2,6 +2,112 @@
 
 - [Docker Images : Maintain for AWS & GCP](https://hub.docker.com/u/prodrelworks)
 - [https://docs.docker.com/develop/develop-images/multistage-build/](https://docs.docker.com/develop/develop-images/multistage-build/)
+- [https://gist.github.com/azmarifdev/9c16c5a33e93aee05b35147fe7da1015](https://gist.github.com/azmarifdev/9c16c5a33e93aee05b35147fe7da1015)
+- [https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df](https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df)
+- [https://ohmyz.sh/#install](https://ohmyz.sh/#install)
+- [https://ohmyposh.dev/docs/installation/linux](https://ohmyposh.dev/docs/installation/linux)
+
+```bash
+git clone --depth 1 -- <https://github.com/zsh-users/zsh-autosuggestions.git> $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone --depth 1 -- <https://github.com/zsh-users/zsh-syntax-highlighting.git> $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone --depth 1 -- <https://github.com/zdharma-continuum/fast-syntax-highlighting.git> $ZSH_CUSTOM/plugins/fast-syntax-highlighting
+git clone --depth 1 -- <https://github.com/marlonrichert/zsh-autocomplete.git> $ZSH_CUSTOM/plugins/zsh-autocomplete
+git clone --depth 1 -- <https://github.com/agkozak/zsh-z> $ZSH_CUSTOM/plugins/zsh-z
+git clone <https://github.com/fdellwing/zsh-bat.git> $ZSH_CUSTOM/plugins/zsh-bat
+git clone --depth 1 <https://github.com/junegunn/fzf.git> ~/.fzf
+
+~/.fzf/install
+
+plugins=(
+    fzf
+    git
+    sudo
+    history-substring-search
+    colored-man-pages
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    fast-syntax-highlighting
+    zsh-autocomplete
+    zsh-z
+)
+```
+
+## TMUX Setup
+
+- [https://tmuxcheatsheet.com/theming-and-customizing/](https://tmuxcheatsheet.com/theming-and-customizing/)
+- [https://github.com/tmux-plugins/tpm](https://github.com/tmux-plugins/tpm)
+
+```bash
+# Customizing TMUX
+# git clone <https://github.com/tmux-plugins/tpm> ~/.tmux/plugins/tpm
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tmux-battery'
+set -g @plugin 'tmux-plugins/tmux-cpu'
+set -g @plugin 'tmux-plugins/tmux-online-status'
+set -g @plugin 'tmux-plugins/tmux-sidebar'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+# set -g @plugin 'erikw/tmux-powerline'
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+
+# Address vim mode switching delay (<http://superuser.com/a/252717/65504>)
+set -s escape-time 0
+
+# Increase scrollback buffer size from 2000 to 50000 lines
+set -g history-limit 60000
+
+# Increase tmux messages display duration from 750ms to 4s
+set -g display-time 2000
+
+# Refresh 'status-left' and 'status-right' more often, from every 15s to 5s
+set -g status-interval 5
+
+# (OS X) Fix pbcopy/pbpaste for old tmux versions (pre 2.6)
+# set -g default-command "reattach-to-user-namespace -l $SHELL"
+
+# Upgrade $TERM
+set -g default-terminal "tmux-256color"
+set -as terminal-overrides ',*:Tc'
+# set -g default-terminal "screen-256color"
+
+# Emacs key bindings in tmux command prompt (prefix + :) are better than
+# vi keys, even for vim users
+# set -g status-keys emacs
+
+# Focus events enabled for terminals that support them
+set -g focus-events on
+
+# Super useful when using "grouped sessions" and multi-monitor setup
+setw -g aggressive-resize on
+
+# Use mouse interactively on the screen
+set -g mouse
+
+# Configure the catppuccin plugin
+set -g @catppuccin_flavor "mocha" # latte, frappe, macchiato, or mocha
+set -g @catppuccin_window_status_style "rounded" # basic, rounded, slanted, custom, or none
+
+# Load catppuccin
+run /local/mnt/workspace/sumilahi/.config/tmux/plugins/catppuccin/catppuccin.tmux
+
+# Make the status line pretty and add some modules
+set -g status-right-length 100
+set -g status-left-length 100
+set -g status-left ""
+set -g status-right "#{E:@catppuccin_status_application}"
+set -agF status-right "#{E:@catppuccin_status_cpu}"
+set -ag status-right "#{E:@catppuccin_status_session}"
+set -ag status-right "#{E:@catppuccin_status_uptime}"
+set -agF status-right "#{E:@catppuccin_status_battery}"
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+
+# run /local/mnt/workspace/sumilahi/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux
+# run /local/mnt/workspace/sumilahi/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux
+```
+
 
 ## Initial Install :
 
