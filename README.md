@@ -6,16 +6,19 @@
 - [https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df](https://gist.github.com/n1snt/454b879b8f0b7995740ae04c5fb5b7df)
 - [https://ohmyz.sh/#install](https://ohmyz.sh/#install)
 - [https://ohmyposh.dev/docs/installation/linux](https://ohmyposh.dev/docs/installation/linux)
+- [https://catalins.tech/zsh-plugins/](https://catalins.tech/zsh-plugins/)
+- [https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425?permalink_comment_id=3945021](https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425?permalink_comment_id=3945021)
+- [https://tmuxcheatsheet.com/theming-and-customizing/](https://tmuxcheatsheet.com/theming-and-customizing/)
 
 ```bash
-git clone --depth 1 -- <https://github.com/zsh-users/zsh-autosuggestions.git> $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone --depth 1 -- <https://github.com/zsh-users/zsh-syntax-highlighting.git> $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-git clone --depth 1 -- <https://github.com/zdharma-continuum/fast-syntax-highlighting.git> $ZSH_CUSTOM/plugins/fast-syntax-highlighting
-git clone --depth 1 -- <https://github.com/marlonrichert/zsh-autocomplete.git> $ZSH_CUSTOM/plugins/zsh-autocomplete
-git clone --depth 1 -- <https://github.com/agkozak/zsh-z> $ZSH_CUSTOM/plugins/zsh-z
-git clone <https://github.com/fdellwing/zsh-bat.git> $ZSH_CUSTOM/plugins/zsh-bat
-git clone --depth 1 <https://github.com/junegunn/fzf.git> ~/.fzf
+git clone --depth 1 -- https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone --depth 1 -- https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone --depth 1 -- https://github.com/zdharma-continuum/fast-syntax-highlighting.git $ZSH_CUSTOM/plugins/fast-syntax-highlighting
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+git clone --depth 1 -- https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
+git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
 
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
 plugins=(
@@ -108,6 +111,32 @@ run '~/.tmux/plugins/tpm/tpm'
 # run /local/mnt/workspace/sumilahi/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux
 ```
 
+### TMUX Source Env
+
+```bash
+tmux source-file ~/.tmux.conf
+```
+
+
+## Language Server
+
+- [https://dev.languagetool.org/http-server](https://dev.languagetool.org/http-server)
+
+```bash
+# Run from the server docker container.
+java -cp languagetool-server.jar org.languagetool.server.HTTPServer --config $HOME/server.properties --port 8081 --allow-origin --public
+
+# Check in browser.
+http://localhost:8082/v2/check?language=en-US&text=my+text
+```
+
+## TexLive
+
+- [https://www.tug.org/texlive/quickinstall.html](https://www.tug.org/texlive/quickinstall.html)
+- [https://www.tug.org/texlive/]
+- [https://inkscape.org/](https://inkscape.org/)
+- [https://textext.github.io/textext/](https://textext.github.io/textext/)
+- 
 
 ## Initial Install :
 
@@ -154,6 +183,10 @@ sudo apt-get install -y nodejs
 
 ## Docker Install  : 
 
+- [https://docs.docker.com/desktop/setup/install/linux/](https://docs.docker.com/desktop/setup/install/linux/)
+- [https://www.docker.com/](https://www.docker.com/)
+- [https://docs.docker.com/build/](https://docs.docker.com/build/)
+
 ```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
@@ -165,6 +198,27 @@ sudo apt install -y docker-ce
 sudo usermod -aG docker $USER
 sudo systemctl status docker
 ```
+
+## Docker Example
+
+```bash
+docker buildx build -t win1-dev-machine:25.10 -f .\windows.dockerfile .
+
+docker run -d --name dev1-clang-llvm --restart unless-stopped `
+  -p 8080:8080 -p 8081:80 -p 443:443 -p 2025:22 -p 5056:56 -p 8082:8081 -p 3000:3000 -p 2000:2000 -p 5000:5000 `
+  --hostname=5b3f3926b12d `
+  --env FULLNAME=dev1-clang-llvm `
+  --env PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" `
+  --volume "C:\Users\lahir\Documents:/docs" `
+  --volume "C:\Users\lahir\Documents\workdir:/workdir" `
+  --volume "C:\Users\lahir\Downloads:/downloads" `
+  --volume dev1-persistance:/persist `
+  --network=bridge `
+  --label "org.opencontainers.image.ref.name=ubuntu" `
+  --label "org.opencontainers.image.version=25.10" `
+  win1-dev-machine:25.10
+```
+
 
 ## More Packages : 
 
@@ -348,8 +402,25 @@ $ xinput map-to-output 23 HDMI-0
 - Git Commands
 
 ```bash
-$ git config credential.helper 'cache --timeout=300'
-$ git config --global commit.gpgsign false
-$ git diff > diff.patch
-$ git apply diff.patch
+git config credential.helper 'cache --timeout=300'
+git config --global commit.gpgsign false
+git diff > diff.patch
+git apply diff.patch
+
+git config --global user.email <email>
+git config --global user.name <name>
+git config --global color.ui true
+git config --global core.editor "nano -w -n"
+git config --global credential.helper store
+```
+
+## Powershell Example
+
+```pwsh
+Get-ChildItem -Path . -File |
+  Where-Object { $_.Name -like 'Happy Cat 😺(*' } |
+  ForEach-Object {
+    $newName = $_.Name -replace '^Happy Cat 😺\(', 'MumMumNew'
+    Rename-Item -LiteralPath $_.FullName -NewName $newName  # add -WhatIf first to preview
+}
 ```
