@@ -10,7 +10,6 @@
 - [https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425?permalink_comment_id=3945021](https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425?permalink_comment_id=3945021)
 - [https://tmuxcheatsheet.com/theming-and-customizing/](https://tmuxcheatsheet.com/theming-and-customizing/)
 - [https://docs.astral.sh/uv/](https://docs.astral.sh/uv/)
-- 
 
 ```bash
 git clone --depth 1 -- https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
