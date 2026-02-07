@@ -18,10 +18,10 @@ git clone --depth 1 -- https://github.com/zdharma-continuum/fast-syntax-highligh
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
 git clone --depth 1 -- https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
 git clone --depth 1 -- https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
-
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+git clone --depth 1 -- https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+## Update this to ~/.zshrc file
 plugins=(
     fzf
     git
@@ -93,7 +93,7 @@ set -g @catppuccin_flavor "mocha" # latte, frappe, macchiato, or mocha
 set -g @catppuccin_window_status_style "rounded" # basic, rounded, slanted, custom, or none
 
 # Load catppuccin
-run /local/mnt/workspace/sumilahi/.config/tmux/plugins/catppuccin/catppuccin.tmux
+run ~/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux
 
 # Make the status line pretty and add some modules
 set -g status-right-length 100
@@ -107,9 +107,6 @@ set -agF status-right "#{E:@catppuccin_status_battery}"
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
-
-# run /local/mnt/workspace/sumilahi/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux
-# run /local/mnt/workspace/sumilahi/.config/tmux/plugins/catppuccin/tmux/catppuccin.tmux
 ```
 
 ### TMUX Source Env
