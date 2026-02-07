@@ -17,7 +17,7 @@ git clone --depth 1 -- https://github.com/zsh-users/zsh-syntax-highlighting.git 
 git clone --depth 1 -- https://github.com/zdharma-continuum/fast-syntax-highlighting.git $ZSH_CUSTOM/plugins/fast-syntax-highlighting
 git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
 git clone --depth 1 -- https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
-git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
+git clone --depth 1 -- https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
