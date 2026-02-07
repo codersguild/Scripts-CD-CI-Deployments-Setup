@@ -143,6 +143,7 @@ http://localhost:8082/v2/check?language=en-US&text=my+text
 - [https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-22-04](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-22-04)
 
 ```bash
+sudo apt-get install build-essential cmake curl file g++-multilib gcc-multilib git libcap-dev libgoogle-perftools-dev libncurses-dev libsqlite3-dev libtcmalloc-minimal4 python3-pip unzip graphviz doxygen
 sudo apt install default-jdk
 sudo apt install openjdk-21-jdk
 ```
